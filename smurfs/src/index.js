@@ -3,11 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
 import thunk from "redux-thunk";
-import logger from "redux-logger";
-import { createStore, applyMiddleware } from "redux";
+import reducer from './reducers/smurfs'
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 
-const store = createStore();
+const composer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, composer(applyMiddleware(thunk)));
 
 ReactDOM.render(
 <Provider store={store}>

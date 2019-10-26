@@ -1,6 +1,7 @@
 import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import { connect } from 'react-redux';
+import { postData } from '../actions/smurfing'
 
 function SmurfForm() {
     return(

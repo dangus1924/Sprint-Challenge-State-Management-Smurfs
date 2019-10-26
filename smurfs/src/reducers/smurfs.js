@@ -4,7 +4,7 @@ import {
     GET_SMURF_DATA_FAILURE,
     POST_SMURF_DATA_REQUEST,
     POST_SMURF_DATA_SUCCESS,
-    POST_SMURF_DATA_FAILURE} from '../actions';
+    POST_SMURF_DATA_FAILURE} from '../actions/smurfing';
 
     const initialState = {
         smurfsAddition: [],
