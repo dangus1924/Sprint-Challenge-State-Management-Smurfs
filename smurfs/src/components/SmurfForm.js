@@ -19,33 +19,34 @@ function SmurfForm() {
                     name="height"
                     placeholder="Smurf Height"
                 />
-
-            <buton type="submit">Submit</buton>
+            <button type="submit">Submit</button>
         </Form>
     )
 }
 
-const FormSmurf = withFormik({
+const FormikSmurfForm = withFormik({
+
     handleSubmit(values, {setStatus}){
-        console.log('values:', values);
-        postData(values);
+        console.log('submitting the following values: ', values);
+        postData(values);    
     },
+
     mapPropsToValues(name, age, height){
         return{
             name: name || '',
-            age:age || '',
+            age: age || '',
             height: height || ''
         }
     }
 })(SmurfForm);
 
 const mapStateToProps = (state) => {
-    return{
-        state
+    return {
+      state
     };
-};
+  };
 
 export default connect(
-    mapStateToProps,
-    {postData}
-)(FormSmurf);
+    mapStateToProps, 
+    { postData })
+    (FormikSmurfForm);
